@@ -20,7 +20,7 @@ const Users = () => {
     }, []);
 
     const getUsers = () => {
-        Axios.get("http://localhost:5000/api/users")
+        Axios.get("/api/users")
             .then(response => {
                 setUsers(response?.data?.response || []);
 
@@ -36,7 +36,7 @@ const Users = () => {
             id: data.id,
             name: data.name
         }
-        Axios.post("http://localhost:5000/api/createuser", payload)
+        Axios.post("/api/createuser", payload)
             .then(() => {
                 getUsers();
                 setSubmitted(false);
@@ -54,7 +54,7 @@ const Users = () => {
             id: data.id,
             name: data.name
         }
-        Axios.post("http://localhost:5000/api/updateuser", payload)
+        Axios.post("/api/updateuser", payload)
             .then(() => {
                 getUsers();
                 setSubmitted(false);
@@ -67,7 +67,7 @@ const Users = () => {
     }
 
     const deleteUser = (data) => {
-        Axios.post("http://localhost:5000/api/deleteuser", data)
+        Axios.post("/api/deleteuser", data)
             .then(() => {
                 getUsers();
             })
