@@ -36,7 +36,7 @@ const Users = () => {
             id: data.id,
             name: data.name
         }
-        Axios.post("/api/createuser", payload)
+        Axios.post("/api/users", payload)
             .then(() => {
                 getUsers();
                 setSubmitted(false);
@@ -54,7 +54,7 @@ const Users = () => {
             id: data.id,
             name: data.name
         }
-        Axios.post("/api/updateuser", payload)
+        Axios.post("/api/users", payload)
             .then(() => {
                 getUsers();
                 setSubmitted(false);
@@ -67,7 +67,7 @@ const Users = () => {
     }
 
     const deleteUser = (data) => {
-        Axios.post("/api/deleteuser", data)
+        Axios.post("/api/users", data)
             .then(() => {
                 getUsers();
             })
