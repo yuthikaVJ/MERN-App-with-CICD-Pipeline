@@ -20,7 +20,7 @@ const Users = () => {
     }, []);
 
     const getUsers = () => {
-        Axios.get("/api/users")
+        Axios.get("http://13.214.132.22:5000/api/users")
             .then(response => {
                 setUsers(response?.data?.response || []);
 
