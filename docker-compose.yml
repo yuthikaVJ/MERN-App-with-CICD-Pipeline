@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  backend:
+    image: yuthikavj31545/backend:latest
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: ${MONGO_URI}
+
+  frontend:
+    image: yuthikavj31545/frontend:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+
+    
