@@ -26,7 +26,6 @@ jobs:
             - name: Build and Push Backend Image
               run: |
                 
-                cd backend
                 docker build -t ${{ secrets.DOCKER_USERNAME }}/mern-backend:latest .
                 docker push ${{ secrets.DOCKER_USERNAME }}/mern-backend:latest
             
